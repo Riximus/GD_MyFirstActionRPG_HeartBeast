@@ -1,0 +1,8 @@
+D:\Rixi\Desktop\GodotFolder\_OnDesktop\GD_MyFirstActionRPG_HeartBeast\.mono\temp\bin\Debug\GD_MyFirstActionRPG_HeartBeast.dll
+D:\Rixi\Desktop\GodotFolder\_OnDesktop\GD_MyFirstActionRPG_HeartBeast\.mono\temp\bin\Debug\GD_MyFirstActionRPG_HeartBeast.pdb
+D:\Rixi\Desktop\GodotFolder\_OnDesktop\GD_MyFirstActionRPG_HeartBeast\.mono\temp\obj\Debug\GD_MyFirstActionRPG_HeartBeast.csprojAssemblyReference.cache
+D:\Rixi\Desktop\GodotFolder\_OnDesktop\GD_MyFirstActionRPG_HeartBeast\.mono\temp\obj\Debug\GD_MyFirstActionRPG_HeartBeast.AssemblyInfoInputs.cache
+D:\Rixi\Desktop\GodotFolder\_OnDesktop\GD_MyFirstActionRPG_HeartBeast\.mono\temp\obj\Debug\GD_MyFirstActionRPG_HeartBeast.AssemblyInfo.cs
+D:\Rixi\Desktop\GodotFolder\_OnDesktop\GD_MyFirstActionRPG_HeartBeast\.mono\temp\obj\Debug\GD_MyFirstActionRPG_HeartBeast.csproj.CoreCompileInputs.cache
+D:\Rixi\Desktop\GodotFolder\_OnDesktop\GD_MyFirstActionRPG_HeartBeast\.mono\temp\obj\Debug\GD_MyFirstActionRPG_HeartBeast.dll
+D:\Rixi\Desktop\GodotFolder\_OnDesktop\GD_MyFirstActionRPG_HeartBeast\.mono\temp\obj\Debug\GD_MyFirstActionRPG_HeartBeast.pdb
