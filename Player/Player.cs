@@ -2,9 +2,10 @@ using Godot;
 using System;
 
 public class Player : KinematicBody2D
-{
-    // Called when the node enters the scene tree for the first time.
-
+{   
+    const int ACCELERATION = 10;
+    const int MAX_SPEED = 100;
+    const int FRICTION = 10;
     Vector2 velocity = Vector2.Zero;
 
     public override void _PhysicsProcess(float delta)
@@ -12,11 +13,13 @@ public class Player : KinematicBody2D
         Vector2 inputVector = Vector2.Zero;
         inputVector.x = Input.GetActionStrength("ui_right") - Input.GetActionStrength("ui_left");
         inputVector.y = Input.GetActionStrength("ui_down") - Input.GetActionStrength("ui_up");
+        inputVector = inputVector.Normalized();
 
         if(inputVector != Vector2.Zero){
-            velocity = inputVector;
+            velocity += inputVector * ACCELERATION * delta;
+            velocity = velocity.Clamped(MAX_SPEED * delta);
         }else{
-            velocity = Vector2.Zero;
+            velocity = velocity.MoveToward(Vector2.Zero, FRICTION * delta);
         }
         MoveAndCollide(velocity);
     }
