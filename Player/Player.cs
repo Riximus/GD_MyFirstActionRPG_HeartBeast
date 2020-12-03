@@ -3,10 +3,10 @@ using System;
 
 public class Player : KinematicBody2D
 {   
-    const int ACCELERATION = 10;
-    const int MAX_SPEED = 100;
-    const int FRICTION = 10;
-    Vector2 velocity = Vector2.Zero;
+    const int ACCELERATION = 500;
+    const int MAX_SPEED = 80;
+    const int FRICTION = 500;
+     Vector2 velocity = Vector2.Zero;
 
     public override void _PhysicsProcess(float delta)
     {
@@ -16,11 +16,10 @@ public class Player : KinematicBody2D
         inputVector = inputVector.Normalized();
 
         if(inputVector != Vector2.Zero){
-            velocity += inputVector * ACCELERATION * delta;
-            velocity = velocity.Clamped(MAX_SPEED * delta);
+            velocity = velocity.MoveToward(inputVector*MAX_SPEED, ACCELERATION*delta);
         }else{
             velocity = velocity.MoveToward(Vector2.Zero, FRICTION * delta);
         }
-        MoveAndCollide(velocity);
+        velocity = MoveAndSlide(velocity);
     }
 }
