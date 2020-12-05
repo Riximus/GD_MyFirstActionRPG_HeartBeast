@@ -7,6 +7,16 @@ public class Player : KinematicBody2D
     const int MAX_SPEED = 80;
     const int FRICTION = 500;
      Vector2 velocity = Vector2.Zero;
+    public AnimationPlayer animationPlayer;
+    public AnimationTree animationTree;
+    public AnimationNodeStateMachinePlayback animationState;
+
+    public override void _Ready()
+    {
+        animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
+        animationTree = GetNode<AnimationTree>("AnimationTree");
+        animationState = (AnimationNodeStateMachinePlayback) animationTree.Get("parameters/playback");
+    }
 
     public override void _PhysicsProcess(float delta)
     {
@@ -16,8 +26,14 @@ public class Player : KinematicBody2D
         inputVector = inputVector.Normalized();
 
         if(inputVector != Vector2.Zero){
+            animationTree.Set("parameters/Idle/blend_position", inputVector);
+            animationTree.Set("parameters/Run/blend_position", inputVector);
+            animationState.Travel("Run");
+
             velocity = velocity.MoveToward(inputVector*MAX_SPEED, ACCELERATION*delta);
         }else{
+            animationState.Travel("Idle");
+
             velocity = velocity.MoveToward(Vector2.Zero, FRICTION * delta);
         }
         velocity = MoveAndSlide(velocity);
