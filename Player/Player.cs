@@ -24,7 +24,7 @@ public class Player : KinematicBody2D
         animationTree.Active = true;
     }
 
-    public override void _Process(float delta)
+    public override void _PhysicsProcess(float delta)
     {
         switch(state){
             case states.MOVE:
